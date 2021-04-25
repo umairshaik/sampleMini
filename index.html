@@ -6,10 +6,15 @@
         alert("Hello World!");
         console.log('Hello World');
         document.write('Hello World');
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Paragraph changed.";
+        }
     </script>
 </head>
 
 <body>
+    <p id="demo">A Paragraph</p>
+    <button type="button" onclick="myFunction()">Try it</button>
 </body>
 
 </html>
