@@ -10,11 +10,13 @@
         function init(val) {
             data = val
             alert(val)
+            Android.showToast(val)
         }
 
         function showAndroidToast() {
             //Android.showToast(toastmsg);
             Android.showToast(data)
+
         }
         function showAndroidDialog(dialogmsg) {
             Android.showDialog(dialogmsg);
