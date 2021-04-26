@@ -4,13 +4,13 @@
     <title>My First JavaScript code</title>
     <script type="text/javascript">
         var data = ""
-        function sendToWeb(val) {
-            data = val
+        function sendToWeb(inputData) {
+            data = inputData
             Android.showToast("Data received from Mobile: "+data)
         }
 
-        function sendToMobile(val) {
-            Android.showToast(val)
+        function sendToMobile(outputData) {
+            Android.showToast(outputData)
 
         }
 
@@ -20,7 +20,7 @@
 <body>
 
     <div>
-        <input type="button" value="Make Toast" onClick="showAndroidToast('Data sent to Mobile')" /><br />
+        <input type="button" value="Make Toast" onClick="sendToMobile('Data sent to Mobile')" /><br />
     </div>
 </body>
 
