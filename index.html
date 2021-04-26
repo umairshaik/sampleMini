@@ -12,8 +12,9 @@
             alert(val)
         }
 
-        function showAndroidToast(toastmsg) {
-            Android.showToast(toastmsg);
+        function showAndroidToast() {
+            //Android.showToast(toastmsg);
+            Android.showToast(data)
         }
         function showAndroidDialog(dialogmsg) {
             Android.showDialog(dialogmsg);
@@ -50,10 +51,11 @@
 </head>
 
 <body>
+    
     <p id="demo">A Paragraph</p>
     <button type="button" onclick="myFunction()">Try it</button>
     <div>
-        <input type="button" value="Make Toast" onClick="showAndroidToast('Toast made by Javascript')" /><br />
+        <input type="button" value="Make Toast" onClick="showAndroidToast()" /><br />
         <input type="button" value="Trigger Dialog"
             onClick="showAndroidDialog('This dialog is triggered by Javascript ')" /><br />
         <input type="button" value="Take me to Next Screen" onClick="moveToScreenTwo()" />
