@@ -6,6 +6,15 @@
         alert("Hello World!");
         console.log('Hello World');
         document.write('Hello World');
+        function showAndroidToast(toastmsg) {
+            Android.showToast(toastmsg);
+        }
+        function showAndroidDialog(dialogmsg) {
+            Android.showDialog(dialogmsg);
+        }
+        function moveToScreenTwo() {
+            Android.moveToNextScreen();
+        }
         function myFunction() {
             document.getElementById("demo").innerHTML = "Paragraph changed.";
             const ua = window.navigator.userAgent;
@@ -31,14 +40,18 @@
                 });
         });
 
-
-
     </script>
 </head>
 
 <body>
     <p id="demo">A Paragraph</p>
     <button type="button" onclick="myFunction()">Try it</button>
+    <div>
+        <input type="button" value="Make Toast" onClick="showAndroidToast('Toast made by Javascript')" /><br />
+        <input type="button" value="Trigger Dialog"
+            onClick="showAndroidDialog('This dialog is triggered by Javascript ')" /><br />
+        <input type="button" value="Take me to Next Screen" onClick="moveToScreenTwo()" />
+    </div>
 </body>
 
 </html>
