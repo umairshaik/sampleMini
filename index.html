@@ -1,66 +1,26 @@
 <html>
 
 <head>
-    <title>My First JavaScript code!!!</title>
+    <title>My First JavaScript code</title>
     <script type="text/javascript">
         var data = ""
-        alert("Hello World!");
-        console.log('Hello World');
-        document.write('Hello World');
-        function init(val) {
+        function sendToWeb(val) {
             data = val
-            alert(val)
+            Android.showToast("Data received from Mobile: "+data)
+        }
+
+        function sendToMobile(val) {
             Android.showToast(val)
-        }
-
-        function showAndroidToast() {
-            //Android.showToast(toastmsg);
-            Android.showToast(data)
 
         }
-        function showAndroidDialog(dialogmsg) {
-            Android.showDialog(dialogmsg);
-        }
-        function moveToScreenTwo() {
-            Android.moveToNextScreen();
-        }
-        function myFunction() {
-            document.getElementById("demo").innerHTML = "Paragraph changed.";
-            const ua = window.navigator.userAgent;
-            return /AppContainer/i.test(ua);
-        }
-
-        function ready(callback) {
-            // call if jsbridge is injected 
-            if (callback && callback()) {
-            } else {// listen to jsbridge ready event 
-
-                document.addEventListener('JSBridgeReady',
-                    callback, false);
-            }
-        }
-
-        ready(function () {
-            JSBridge.call('paytmFetchAuthCode', {
-                clientId: "c644582a1d0645ddaebe4bee95e24458"
-            },
-                function (result) {
-                    document.log(JSON.stringify(result))
-                });
-        });
 
     </script>
 </head>
 
 <body>
-    
-    <p id="demo">A Paragraph</p>
-    <button type="button" onclick="myFunction()">Try it</button>
+
     <div>
-        <input type="button" value="Make Toast" onClick="showAndroidToast()" /><br />
-        <input type="button" value="Trigger Dialog"
-            onClick="showAndroidDialog('This dialog is triggered by Javascript ')" /><br />
-        <input type="button" value="Take me to Next Screen" onClick="moveToScreenTwo()" />
+        <input type="button" value="Make Toast" onClick="showAndroidToast('Data sent to Mobile')" /><br />
     </div>
 </body>
 
